@@ -31,7 +31,7 @@ Step 3
 
 Step 4
 
-    Plan tests first
+    create tests first
 
             1. Authentication tests
                 Guests cannot list logs.
