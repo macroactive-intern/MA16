@@ -612,3 +612,64 @@ Failed asserting that 404 is identical to 401.
 
   Tests:    32 failed, 2 passed (8 assertions)
   Duration: 1.36s
+
+
+
+  -----------------------------------------------------------------------------------------------------------------------------------------
+
+  After
+
+  -----------------------------------------------------------------------------------------------------------------------------------------
+
+   PASS  Tests\Unit\ExampleTest
+  ✓ that true is true
+
+   PASS  Tests\Feature\AuthenticationTest
+  ✓ it guests cannot list workout logs                                                                                                0.31s  
+  ✓ it guests cannot create workout logs                                                                                              0.01s  
+  ✓ it guests cannot view a workout log                                                                                               0.01s  
+  ✓ it guests cannot update a workout log                                                                                             0.01s  
+  ✓ it guests cannot delete a workout log                                                                                             0.01s  
+  ✓ it guests cannot access workout stats                                                                                             0.02s  
+
+   PASS  Tests\Feature\ExampleTest
+  ✓ the application returns a successful response                                                                                     0.03s  
+
+   PASS  Tests\Feature\WorkoutLogCreateTest
+  ✓ it client can create a workout log                                                                                                0.05s  
+  ✓ it coach cannot create a workout log                                                                                              0.02s  
+  ✓ it user_id is taken from the authenticated client                                                                                 0.02s  
+  ✓ it coach_id is copied from the clients assigned coach                                                                             0.02s  
+
+   PASS  Tests\Feature\WorkoutLogDeleteTest
+  ✓ it client can soft-delete their own log                                                                                           0.02s  
+  ✓ it client cannot delete another clients log                                                                                       0.02s  
+  ✓ it coach cannot delete a client log                                                                                               0.02s  
+  ✓ it row remains in the database after soft delete                                                                                  0.01s  
+  ✓ it deleted_at is set after soft delete                                                                                            0.02s  
+
+   PASS  Tests\Feature\WorkoutLogListTest
+  ✓ it client sees only their own logs                                                                                                0.02s  
+  ✓ it client cannot view another clients log                                                                                         0.01s  
+  ✓ it coach sees logs for their assigned clients                                                                                     0.02s  
+  ✓ it coach does not see another coachs client logs                                                                                  0.01s  
+  ✓ it coach can view an assigned client log                                                                                          0.02s  
+  ✓ it coach cannot view an unassigned client log                                                                                     0.02s  
+
+   PASS  Tests\Feature\WorkoutLogUpdateTest
+  ✓ it client can update their own log from 3 days ago                                                                                0.02s  
+  ✓ it client cannot update their own log from 8 days ago                                                                             0.02s  
+  ✓ it client cannot update another clients log                                                                                       0.02s  
+  ✓ it coach cannot update a client log                                                                                               0.02s  
+  ✓ it client can update a log from exactly 7 days ago                                                                                0.02s  
+
+   PASS  Tests\Feature\WorkoutStatsTest
+  ✓ it client gets total log count                                                                                                    0.02s  
+  ✓ it client gets total duration                                                                                                     0.02s  
+  ✓ it client gets most logged program                                                                                                0.02s  
+  ✓ it soft-deleted logs are excluded from stats                                                                                      0.01s  
+  ✓ it other clients logs are excluded from stats                                                                                     0.02s  
+  ✓ it coach cannot access workout stats                                                                                              0.02s  
+
+  Tests:    34 passed (45 assertions)
+  Duration: 1.13s
